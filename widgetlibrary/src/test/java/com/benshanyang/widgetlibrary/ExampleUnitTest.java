@@ -1,4 +1,4 @@
-package com.benshanyang.yk_widget;
+package com.benshanyang.widgetlibrary;
 
 import org.junit.Test;
 
