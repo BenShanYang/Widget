@@ -1,0 +1,4 @@
+include ':yk_widget'
+include ':widget'
+include ':app'
+rootProject.name = "Widget"
