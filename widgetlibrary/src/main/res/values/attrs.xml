@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <attr name="cornerRadius" format="dimension" />
+    <attr name="borderWidth" format="dimension" />
+    <attr name="borderColor" format="color" />
+    <attr name="iconPaddingLeft" format="dimension" />
+    <attr name="drawablePaddingLeft" format="dimension" />
+    <attr name="drawablePaddingRight" format="dimension" />
+    <attr name="iconColor" format="color" />
+    <attr name="focusedBorderColor" format="color" />
+    <attr name="normalBorderColor" format="color" />
+
+    <attr name="backgroundColor" format="color" />
+    <attr name="topBorderNormalColor" format="color" />
+    <attr name="topBorderPressedColor" format="color" />
+    <attr name="bottomBorderNormalColor" format="color" />
+    <attr name="bottomBorderPressedColor" format="color" />
+    <attr name="topBorderWidth" format="dimension" />
+    <attr name="bottomBorderWidth" format="dimension" />
+    <attr name="topBorderLeftSpace" format="dimension" />
+    <attr name="topBorderRightSpace" format="dimension" />
+    <attr name="bottomBorderLeftSpace" format="dimension" />
+    <attr name="bottomBorderRightSpace" format="dimension" />
+
+    <attr name="titleIcon" format="reference" />
+    <attr name="titleDrawablePadding" format="dimension" />
+    <attr name="titleContentSpace" format="dimension" />
+    <attr name="titleTextSize" format="dimension" />
+    <attr name="titleTextColor" format="color" />
+    <attr name="titleText" format="string" />
+    <attr name="contentTextSize" format="dimension" />
+    <attr name="contentTextColor" format="color" />
+    <attr name="contentText" format="string" />
+    <attr name="iconClear" format="reference" />
+    <attr name="isShowBorder" format="boolean" />
+
+    <!--圆形或圆角图片-->
+    <declare-styleable name="RoundImageView">
+        <!--圆角半径-->
+        <attr name="cornerRadius" />
+        <!--边框尺寸-->
+        <attr name="borderWidth" />
+        <!--边框颜色-->
+        <attr name="borderColor" />
+        <!--是否为圆-->
+        <attr name="isCircle" format="boolean" />
+        <!--蒙版颜色-->
+        <attr name="maskColor" format="color" />
+        <!--左上角圆角半径-->
+        <attr name="cornerTopLeftRadius" format="dimension" />
+        <!--右上角圆角半径-->
+        <attr name="cornerTopRightRadius" format="dimension" />
+        <!--左下角圆角半径-->
+        <attr name="cornerBottomLeftRadius" format="dimension" />
+        <!--右下角圆角半径-->
+        <attr name="cornerBottomRightRadius" format="dimension" />
+        <!--是否为椭圆-->
+        <attr name="isOval" format="boolean" />
+    </declare-styleable>
+
+    <!--密码输入框-->
+    <declare-styleable name="PasswordEditText">
+        <!--文字大小-->
+        <attr name="android:textSize" />
+        <!--文字颜色-->
+        <attr name="android:textColor" />
+        <!--占位文字-->
+        <attr name="android:hint" />
+        <!--占位文字颜色-->
+        <attr name="android:textColorHint" />
+        <!--文字-->
+        <attr name="android:text" />
+        <!--过滤条件-->
+        <attr name="android:digits" />
+        <!--最大输入长度-->
+        <attr name="android:maxLength" />
+        <!--密码输入框最左侧小图标-->
+        <attr name="android:icon" />
+        <!--底部边框尺寸-->
+        <attr name="bottomBorderWidth" />
+        <!--Icon和左边的距离-->
+        <attr name="iconPaddingLeft" />
+        <!--文字左侧距Icon的尺寸-->
+        <attr name="drawablePaddingLeft" />
+        <!--文字右侧距Icon的尺寸-->
+        <attr name="drawablePaddingRight" />
+        <!--Icon的颜色-->
+        <attr name="iconColor" />
+        <!--清除按钮的图片颜色-->
+        <attr name="passwordClearImageColor" format="color" />
+        <!--显示/隐藏按钮的图片颜色-->
+        <attr name="passwordSwitchImageColor" format="color" />
+        <!--显示/隐藏按钮的图片-->
+        <attr name="passwordSwitchSrc" format="reference" />
+        <!--清除按钮的图片-->
+        <attr name="passwordClearSrc" format="reference" />
+        <!--获得焦点时的边框颜色-->
+        <attr name="focusedBorderColor" />
+        <!--未获得焦点时的边框颜色-->
+        <attr name="normalBorderColor" />
+        <!--底边框距左侧的距离-->
+        <attr name="bottomBorderLeftSpace" />
+        <!--底边框距右侧的距离-->
+        <attr name="bottomBorderRightSpace" />
+        <!--边框显示和隐藏-->
+        <attr name="borderVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+        <!--右侧清除按钮和显示/隐藏按钮的排列顺序-->
+        <attr name="actionButtonType" format="enum">
+            <enum name="clear_password" value="0" />
+            <enum name="password_clear" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--带上下分割线的TextView-->
+    <declare-styleable name="BorderTextView">
+        <!--边框颜色-->
+        <attr name="borderColor" />
+        <!--背景色-->
+        <attr name="backgroundColor" />
+        <!--上边框正常颜色-->
+        <attr name="topBorderNormalColor" />
+        <!--上边框按压时的颜色-->
+        <attr name="topBorderPressedColor" />
+        <!--底边框正常颜色-->
+        <attr name="bottomBorderNormalColor" />
+        <!--底边框按压时的颜色-->
+        <attr name="bottomBorderPressedColor" />
+        <!--上边框的尺寸-->
+        <attr name="topBorderWidth" />
+        <!--底边框的尺寸-->
+        <attr name="bottomBorderWidth" />
+        <!--上边框距离左侧的距离-->
+        <attr name="topBorderLeftSpace" />
+        <!--上边框距离右侧的距离-->
+        <attr name="topBorderRightSpace" />
+        <!--底边框距离左侧的距离-->
+        <attr name="bottomBorderLeftSpace" />
+        <!--底边框距离右侧的距离-->
+        <attr name="bottomBorderRightSpace" />
+        <!--上边框显示/隐藏-->
+        <attr name="topBorderVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="gone" value="1" />
+        </attr>
+        <!--底边框显示/隐藏-->
+        <attr name="bottomBorderVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="gone" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--带有查看更多、大标题小标题的文字功能控件-->
+    <declare-styleable name="FunctionalTextView">
+        <!--最大行数-->
+        <attr name="android:maxLines" />
+        <!--单行-->
+        <attr name="android:singleLine" />
+        <!--标题文字颜色-->
+        <attr name="titleTextColor" />
+        <!--标题的Icon-->
+        <attr name="titleIcon" />
+        <!--内容右侧图片-->
+        <attr name="contentRightIcon" format="reference" />
+        <!--内容左侧图片-->
+        <attr name="contentLeftIcon" format="reference" />
+        <!--标题距离Icon的距离-->
+        <attr name="titleDrawablePadding" />
+        <!--内容距图标的距离-->
+        <attr name="contentDrawablePadding" format="dimension" />
+        <!--标题和内容的距离-->
+        <attr name="titleContentSpace" />
+        <!--标题的字号-->
+        <attr name="titleTextSize" />
+        <!--标题文字-->
+        <attr name="titleText" />
+        <!--内容文字的字号-->
+        <attr name="contentTextSize" />
+        <!--内容文字的颜色-->
+        <attr name="contentTextColor" />
+        <!--内容文字-->
+        <attr name="contentText" />
+        <!--边框的颜色-->
+        <attr name="borderColor" />
+        <!--背景颜色-->
+        <attr name="backgroundColor" />
+        <!--上边框默认颜色-->
+        <attr name="topBorderNormalColor" />
+        <!--上边框点击时的颜色-->
+        <attr name="topBorderPressedColor" />
+        <!--下边框默认颜色-->
+        <attr name="bottomBorderNormalColor" />
+        <!--下边框点击时的颜色-->
+        <attr name="bottomBorderPressedColor" />
+        <!--上边框的尺寸-->
+        <attr name="topBorderWidth" />
+        <!--下边框的尺寸-->
+        <attr name="bottomBorderWidth" />
+        <!--上边框左侧距离-->
+        <attr name="topBorderLeftSpace" />
+        <!--上边框右侧距离-->
+        <attr name="topBorderRightSpace" />
+        <!--下边框左侧距离-->
+        <attr name="bottomBorderLeftSpace" />
+        <!--下边框右侧距离-->
+        <attr name="bottomBorderRightSpace" />
+    </declare-styleable>
+
+    <!--账号输入框-->
+    <declare-styleable name="AccountEditText">
+        <!--左侧Icon距左侧的距离-->
+        <attr name="iconPaddingLeft" />
+        <!--左侧Icon距离内容的距离-->
+        <attr name="drawablePaddingLeft" />
+        <!--清除按钮左内边距-->
+        <attr name="clearIconPaddingLeft" format="dimension" />
+        <!--清除按钮右内边距-->
+        <attr name="clearIconPaddingRight" format="dimension" />
+        <!--输入的最大字数-->
+        <attr name="android:maxLength" />
+        <!--最小行数-->
+        <attr name="android:minLines" />
+        <!--最大行数-->
+        <attr name="android:maxLines" />
+        <!--内容最小高度-->
+        <attr name="android:minHeight" />
+        <!--字号-->
+        <attr name="android:textSize" />
+        <!--文字颜色-->
+        <attr name="android:textColor" />
+        <!--文字-->
+        <attr name="android:text" />
+        <!--占位文字的文字颜色-->
+        <attr name="android:textColorHint" />
+        <!--占位文字-->
+        <attr name="android:hint" />
+        <!--文字的对齐方式-->
+        <attr name="android:gravity" />
+        <!--输入文字的类型-->
+        <attr name="android:inputType" />
+        <!--输入框最左侧小图标-->
+        <attr name="android:icon" />
+        <!--过滤条件-->
+        <attr name="android:digits" />
+        <!--设置输入单行-->
+        <attr name="android:singleLine" />
+        <!--文字距上的内边距-->
+        <attr name="textPaddingTop" format="dimension" />
+        <!--文字距下的内边距-->
+        <attr name="textPaddingBottom" format="dimension" />
+        <!--底边的边框粗细-->
+        <attr name="borderWidth" />
+        <!--获取焦点的时候边框颜色-->
+        <attr name="focusedBorderColor" />
+        <!--默认的边框颜色-->
+        <attr name="normalBorderColor" />
+        <!--左侧图标颜色-->
+        <attr name="iconColor" />
+        <!--清空图标的颜色-->
+        <attr name="iconClearColor" format="color" />
+        <!--清空图标-->
+        <attr name="iconClear" />
+        <!--是否显示边框-->
+        <attr name="isShowBorder" />
+        <!--是否显示左侧图标-->
+        <attr name="isShowIcon" format="boolean" />
+        <!--边框距离左侧边距-->
+        <attr name="bottomBorderLeftSpace" />
+        <!--边框距离右侧边距-->
+        <attr name="bottomBorderRightSpace" />
+    </declare-styleable>
+
+    <!--简单的带清除功能的输入框-->
+    <declare-styleable name="ErasableEditText">
+        <!--文字-->
+        <attr name="android:text" />
+        <!--占位文字-->
+        <attr name="android:hint" />
+        <!--文字字号-->
+        <attr name="android:textSize" />
+        <!--文字颜色-->
+        <attr name="android:textColor" />
+        <!--占位文字颜色-->
+        <attr name="android:textColorHint" />
+        <!--文字对齐方式-->
+        <attr name="android:gravity" />
+        <!--过滤条件-->
+        <attr name="android:digits" />
+        <!--最大长度-->
+        <attr name="android:maxLength" />
+        <!--清空图标-->
+        <attr name="iconClear" />
+        <!--边框粗细-->
+        <attr name="borderWidth" />
+        <!--背景色-->
+        <attr name="backgroundColor" />
+        <!--输入框未获取焦点时候的底边颜色-->
+        <attr name="normalBorderColor" />
+        <!--获取焦点时的背景色-->
+        <attr name="focusedBorderColor" />
+        <!--设置底边颜色设置后获取焦点和为获取焦点都是该颜色-->
+        <attr name="borderColor" />
+        <!--是否显示边框-->
+        <attr name="isShowBorder" />
+        <!--默认背景色-->
+        <attr name="normalBackground" format="color" />
+        <!--获取焦点的背景色-->
+        <attr name="focusedBackground" format="color" />
+    </declare-styleable>
+</resources>
