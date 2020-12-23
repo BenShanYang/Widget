@@ -115,6 +115,7 @@ public class RoundButton extends AppCompatTextView {
         normalDrawable.setShape(GradientDrawable.RECTANGLE);
 
         // 如果设定的有Orientation 就默认为是渐变色的Button，否则就是纯色的Button
+        //https://fsilence.github.io/2019/06/19/android-gradient/
         if (gradientOrientation != -1) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 GradientDrawable.Orientation orientation = getOrientation(gradientOrientation);
