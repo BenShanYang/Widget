@@ -171,4 +171,24 @@
         app:layout_constraintTop_toBottomOf="@+id/cet"
         app:normalBorderColor="#D5D5D5" />
 
+    <com.benshanyang.widgetlibrary.widget.RoundButton
+        android:id="@+id/btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:text="点我试试"
+        app:borderWidth="1dp"
+        app:cornerRadius="10dp"
+        app:isShowBorder="true"
+        app:layout_constraintLeft_toLeftOf="@+id/simple_clear_edittext"
+        app:layout_constraintRight_toRightOf="@+id/simple_clear_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/simple_clear_edittext"
+        app:normalBackgroundColor="#F3F3F3"
+        app:normalBorderColor="#D5D5D5"
+        app:normalTextColor="#333333"
+        app:pressedBackgroundColor="#FFFF00"
+        app:pressedBorderColor="#FF0000"
+        app:pressedTextColor="#00FF00" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -312,4 +312,62 @@
         <!--获取焦点的背景色-->
         <attr name="focusedBackground" format="color" />
     </declare-styleable>
+
+    <!--自定义圆角按钮-->
+    <declare-styleable name="RoundButton">
+        <!--圆角半径-->
+        <attr name="cornerRadius" />
+        <!--是否显示边框-->
+        <attr name="isShowBorder" />
+        <!--边框尺寸-->
+        <attr name="borderWidth" />
+        <!--按下时的边框颜色-->
+        <attr name="pressedBorderColor" format="color" />
+        <!--默认的边框颜色-->
+        <attr name="normalBorderColor" />
+        <!--按下时的背景色-->
+        <attr name="pressedBackgroundColor" format="color" />
+        <!--默认的背景色-->
+        <attr name="normalBackgroundColor" format="color" />
+        <!--按下时的文字颜色-->
+        <attr name="pressedTextColor" format="color" />
+        <!--默认的文字颜色-->
+        <attr name="normalTextColor" format="color" />
+        <!--点划线的长度-->
+        <attr name="dashWidth" format="dimension" />
+        <!--点划线间的缝隙宽度-->
+        <attr name="dashGap" format="dimension" />
+        <!--左上角圆角半径-->
+        <attr name="topLeftRadius" format="dimension" />
+        <!--右上角圆角半径-->
+        <attr name="topRightRadius" format="dimension" />
+        <!--左下角圆角半径-->
+        <attr name="bottomLeftRadius" format="dimension" />
+        <!--右下角圆角半径-->
+        <attr name="bottomRightRadius" format="dimension" />
+        <!--渐变开始颜色-->
+        <attr name="android:startColor" />
+        <!--渐变结尾颜色-->
+        <attr name="android:endColor" />
+        <!--渐变中间颜色-->
+        <attr name="android:centerColor" />
+        <!--背景渐变的方向-->
+        <attr name="gradientOrientation">
+            <enum name="BL_TR" value="0" />
+            <enum name="BOTTOM_TOP" value="1" />
+            <enum name="BR_TL" value="2" />
+            <enum name="LEFT_RIGHT" value="3" />
+            <enum name="RIGHT_LEFT" value="4" />
+            <enum name="TL_BR" value="5" />
+            <enum name="TOP_BOTTOM" value="6" />
+            <enum name="TR_BL" value="7" />
+        </attr>
+        <!--背景渐变的类型-->
+        <attr name="gradientType">
+            <enum name="linear" value="0" />
+            <enum name="radial" value="1" />
+            <enum name="sweep" value="2" />
+        </attr>
+    </declare-styleable>
+
 </resources>
