@@ -370,4 +370,81 @@
         </attr>
     </declare-styleable>
 
+    <!--自定义标题栏-->
+    <declare-styleable name="TitleBarView">
+        <!--标题文字-->
+        <attr name="titleText" />
+        <!--按钮文字-->
+        <attr name="buttonText" format="string" />
+        <!--标题文字字号-->
+        <attr name="titleTextSize" />
+        <!--右侧按钮文字字号-->
+        <attr name="buttonTextSize" format="dimension" />
+        <!--右侧按钮文字和图片的距离-->
+        <attr name="buttonDrawablePadding" format="dimension" />
+        <!--底边边框线宽度-->
+        <attr name="borderWidth" />
+        <!--标题栏高度-->
+        <attr name="titleBarHeight" format="dimension" />
+        <!--底边边框线颜色-->
+        <attr name="borderColor" />
+        <!--标题栏背景色-->
+        <attr name="titleBarBackgroundColor" format="color" />
+        <!--标题文字颜色-->
+        <attr name="titleTextColor" />
+        <!--右侧按钮文字颜色-->
+        <attr name="buttonTextColor" format="reference|color" />
+        <!--右侧文字按钮的图片-->
+        <attr name="buttonDrawable" format="reference" />
+        <!--右侧文字按钮的图片的颜色-->
+        <attr name="buttonDrawableColor" format="color" />
+        <!--返回按钮的图片-->
+        <attr name="backImageSrc" format="reference" />
+        <!--返回按钮的图片颜色-->
+        <attr name="backImageColor" format="color" />
+        <!--右侧按钮类型-->
+        <attr name="buttonType" format="enum">
+            <enum name="image_button" value="0" />
+            <enum name="text_button" value="1" />
+        </attr>
+        <!--是否支持沉浸式-->
+        <attr name="immersionStatusBar" format="boolean" />
+        <!--是否显示左侧返回按钮-->
+        <attr name="finishActivityVisibility">
+            <!-- Visible on screen; the default value. -->
+            <enum name="visible" value="0" />
+            <!-- Not displayed, but taken into account during layout (space is left for it). -->
+            <enum name="invisible" value="1" />
+        </attr>
+        <!--是否显示右侧按钮-->
+        <attr name="actionButtonVisibility">
+            <!-- Visible on screen; the default value. -->
+            <enum name="visible" value="0" />
+            <!-- Not displayed, but taken into account during layout (space is left for it). -->
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--自定义文字横向跑马灯控件-->
+    <declare-styleable name="MarqueeView">
+        <!--滚动显示的文字-->
+        <attr name="android:text" />
+        <!--滚动显示文字的字号-->
+        <attr name="android:textSize" />
+        <!--滚动显示文字的颜色-->
+        <attr name="android:textColor" />
+        <!--文字首尾阴影的颜色-->
+        <attr name="android:background" />
+        <!--设置文字和图片之间的距离-->
+        <attr name="android:drawablePadding" />
+        <!--是否显示关闭按钮-->
+        <attr name="isShowClose" format="boolean" />
+        <!--是否显示滚动文字前边的图标-->
+        <attr name="isShowNotice" format="boolean" />
+        <!--滚动文字前面的图标-->
+        <attr name="noticeSrc" format="reference" />
+        <!--关闭按钮的图标-->
+        <attr name="closeSrc" format="reference" />
+    </declare-styleable>
+
 </resources>

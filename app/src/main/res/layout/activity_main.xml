@@ -6,6 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.benshanyang.widgetlibrary.widget.TitleBarView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:actionButtonVisibility="visible"
+        app:borderColor="#D5D5D5"
+        app:borderWidth="1dp"
+        app:buttonDrawable="@drawable/ic_menu"
+        app:buttonText="菜单"
+        app:buttonTextSize="8sp"
+        app:buttonType="text_button"
+        app:immersionStatusBar="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleText="标题" />
+
+    <com.benshanyang.widgetlibrary.widget.MarqueeView
+        android:id="@+id/marquee_view"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:background="@android:color/holo_orange_light"
+        android:drawablePadding="8dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="百度翻译依托互联网数据资源和自然语言处理技术优势,致力于帮助用户跨越语言鸿沟,方便快捷地获取信息和服务"
+        android:textColor="@android:color/white"
+        app:closeSrc="@drawable/ic_clear"
+        app:isShowClose="true"
+        app:isShowNotice="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_view"
+        app:noticeSrc="@drawable/ic_warning" />
+
     <com.benshanyang.widgetlibrary.widget.PasswordEditText
         android:id="@+id/pwdet"
         android:layout_width="300dp"
@@ -28,8 +64,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toBottomOf="@+id/marquee_view"
+        app:layout_constraintVertical_bias="0.05"
         app:normalBorderColor="#D5D5D5"
         app:passwordClearImageColor="#FF0000"
         app:passwordSwitchImageColor="#0000FF" />
@@ -45,7 +81,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:text="ExpandTextView"
+        android:text="查看部门"
         app:backgroundColor="@android:color/white"
         app:borderColor="#D5D5D5"
         app:bottomBorderLeftSpace="15dp"
