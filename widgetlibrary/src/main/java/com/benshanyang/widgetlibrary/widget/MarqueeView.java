@@ -188,11 +188,13 @@ public class MarqueeView extends RelativeLayout {
         addView(leftShadowView, leftShadow);//左阴影
         addView(rightShadowView, rightShadow);//右阴影
 
+        //初始化滚动动画Handler
         marqueeHandler = new MarqueeHandler(tvNotice, leftShadowView, rightShadowView);
         post(new Runnable() {
             @Override
             public void run() {
                 if (marqueeHandler != null && !TextUtils.isEmpty(text)) {
+                    //启动滚动动画
                     marqueeHandler.sendEmptyMessageDelayed(0, 200);
                 }
             }
