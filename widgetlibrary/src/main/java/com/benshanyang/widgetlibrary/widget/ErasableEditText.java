@@ -602,7 +602,7 @@ public class ErasableEditText extends LinearLayout {
                     imm.showSoftInput(getEditText(), InputMethodManager.SHOW_IMPLICIT);
                 }
             } else {
-                Log.w("PasswordEditText", "showSoftInput() can not get focus");
+                Log.w("ErasableEditText", "showSoftInput() can not get focus");
             }
         }
     }

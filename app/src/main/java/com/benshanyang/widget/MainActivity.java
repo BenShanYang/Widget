@@ -9,12 +9,17 @@ import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.benshanyang.widgetlibrary.widget.SearchBarView;
 import com.benshanyang.widgetlibrary.widget.TitleBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -60,6 +65,50 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish(View view) {
                 Toast.makeText(MainActivity.this, "点击了返回", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        ((SearchBarView) findViewById(R.id.search_bar_view_1)).setOnTextChangedListener(new SearchBarView.OnTextChangedListener() {
+            @Override
+            public void onChanged(Editable s, final EditText editText, ImageButton imageButton) {
+                imageButton.setImageResource(TextUtils.isEmpty(s) ? R.drawable.ic_camera : R.drawable.ic_clear);
+            }
+        }, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(((SearchBarView) findViewById(R.id.search_bar_view_1)).getText())) {
+                    Toast.makeText(MainActivity.this, "拍照", Toast.LENGTH_SHORT).show();
+                } else {
+                    ((SearchBarView) findViewById(R.id.search_bar_view_1)).setText("");
+                }
+            }
+        });
+
+        ((SearchBarView) findViewById(R.id.search_bar_view_2)).setOnActionButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "拍照", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ((SearchBarView) findViewById(R.id.search_bar_view_3)).setOnTextChangedListener(new SearchBarView.OnTextChangedListener() {
+            @Override
+            public void onChanged(Editable s, EditText editText, ImageButton imageButton) {
+                imageButton.setVisibility(TextUtils.isEmpty(s) ? View.GONE : View.VISIBLE);
+            }
+        });
+        ((SearchBarView) findViewById(R.id.search_bar_view_3)).setOnActionButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!TextUtils.isEmpty(((SearchBarView) findViewById(R.id.search_bar_view_3)).getText())) {
+                    ((SearchBarView) findViewById(R.id.search_bar_view_3)).setActionIconVisibility(View.GONE);
+                    ((SearchBarView) findViewById(R.id.search_bar_view_3)).setText("");
+                    ((SearchBarView) findViewById(R.id.search_bar_view_3)).getEditText().setFocusable(true);
+                    ((SearchBarView) findViewById(R.id.search_bar_view_3)).getEditText().setFocusableInTouchMode(true);
+                    ((SearchBarView) findViewById(R.id.search_bar_view_3)).getEditText().requestFocus();
+                    ((SearchBarView) findViewById(R.id.search_bar_view_3)).showKeyboard();
+                }
             }
         });
     }

@@ -780,7 +780,7 @@ public class AccountEditText extends FrameLayout {
                     imm.showSoftInput(getEditText(), InputMethodManager.SHOW_IMPLICIT);
                 }
             } else {
-                Log.w("PasswordEditText", "showSoftInput() can not get focus");
+                Log.w("AccountEditText", "showSoftInput() can not get focus");
             }
         }
     }

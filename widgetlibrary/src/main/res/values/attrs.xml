@@ -447,4 +447,45 @@
         <attr name="closeSrc" format="reference" />
     </declare-styleable>
 
+    <!--搜索栏-->
+    <declare-styleable name="SearchBarView">
+        <!--文字内容-->
+        <attr name="android:text" />
+        <!--文字占位图-->
+        <attr name="android:hint" />
+        <!--文字字号-->
+        <attr name="android:textSize" />
+        <!--文字颜色-->
+        <attr name="android:textColor" />
+        <!--占位文字的颜色-->
+        <attr name="android:textColorHint" />
+        <!--输入的最大长度-->
+        <attr name="android:maxLength" />
+        <!--输入文字的过滤条件-->
+        <attr name="android:digits" />
+        <!--输入文字的类型-->
+        <attr name="android:inputType" />
+        <!--右侧功能按钮图片-->
+        <attr name="actionIcon" format="reference" />
+        <!--左侧图片Icon-->
+        <attr name="editIcon" format="reference" />
+        <!--左侧图片和文字的间距-->
+        <attr name="editIconPadding" format="dimension" />
+        <!--是否显示边框-->
+        <attr name="isShowBorder" />
+        <!--是否显示最右侧Button-->
+        <attr name="isShowActionButton" format="boolean" />
+        <!--圆角-->
+        <attr name="cornerRadius" />
+        <!--默认背景色-->
+        <attr name="backgroundColor" />
+        <!--获取焦点时的背景色-->
+        <attr name="focusedBackgroundColor" format="color" />
+        <!--默认边框颜色-->
+        <attr name="borderColor" />
+        <!--获取焦点时的边框颜色-->
+        <attr name="focusedBorderColor" />
+        <!--边框的宽度-->
+        <attr name="borderWidth" />
+    </declare-styleable>
 </resources>
