@@ -369,7 +369,7 @@ public class AccountEditText extends FrameLayout {
      * 设置输入框的输入类型
      *
      * @param type 输入类型 输入类型请参照{@link InputType}
-     * @see InputType
+     * @see android.text.InputType 输入类型入参
      */
     public void setInputType(int type) {
         if (etInput != null) {

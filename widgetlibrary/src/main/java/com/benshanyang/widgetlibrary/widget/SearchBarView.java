@@ -319,7 +319,7 @@ public class SearchBarView extends LinearLayout {
     /**
      * 输入类型
      *
-     * @param type 输入的类型 例如：InputType.TYPE_CLASS_TEXT
+     * @param type 输入的类型 例如：InputType.TYPE_CLASS_TEXT ,输入类型请参照{@link InputType}
      * @see android.text.InputType 输入类型入参
      */
     public void setInputType(int type) {

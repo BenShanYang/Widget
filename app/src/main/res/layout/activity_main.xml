@@ -256,6 +256,7 @@
                     android:textColor="#333333"
                     android:textColorHint="#999999"
                     android:textSize="14sp"
+                    android:inputType="number"
                     app:backgroundColor="#F1F1F1"
                     app:borderColor="#D5D5D5"
                     app:borderWidth="1dp"

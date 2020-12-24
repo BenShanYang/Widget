@@ -51,6 +51,7 @@ public class ErasableEditText extends LinearLayout {
     private int maxLength = Integer.MAX_VALUE;//最大输入长度
     private int width = 0;//控件宽
     private int height = 0;//空间高
+    private int inputType = -1;//输入类型
     private float borderWidth = 0f;//底边的线粗
     private float textSize = 0f;//文字大小
     private boolean isShowBorder = false;//是否显示底边
@@ -147,6 +148,8 @@ public class ErasableEditText extends LinearLayout {
                     normalBackground = typedArray.getDrawable(attr);//未获取焦点时的背景
                 } else if (attr == R.styleable.ErasableEditText_focusedBackground) {
                     focusedBackground = typedArray.getDrawable(attr);//获取焦点时的背景
+                } else if (attr == R.styleable.ErasableEditText_android_inputType) {
+                    inputType = typedArray.getInt(attr, -1);//输入类型
                 }
             }
             typedArray.recycle();
@@ -184,6 +187,9 @@ public class ErasableEditText extends LinearLayout {
             setBackgroundDrawable(normalBackground != null ? normalBackground : focusedBackground);
         }
         if (editText != null && clearButton != null) {
+            if (inputType != -1) {
+                editText.setInputType(inputType);
+            }
             editText.setText(TextUtils.isEmpty(text) ? "" : text);//设置文字
             editText.setHint(TextUtils.isEmpty(hint) ? "" : hint);//设置提示文字
             if (textSize > 0) {

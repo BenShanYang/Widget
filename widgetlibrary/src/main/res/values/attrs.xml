@@ -293,6 +293,8 @@
         <attr name="android:digits" />
         <!--最大长度-->
         <attr name="android:maxLength" />
+        <!--输入内容类型-->
+        <attr name="android:inputType" />
         <!--清空图标-->
         <attr name="iconClear" />
         <!--边框粗细-->
