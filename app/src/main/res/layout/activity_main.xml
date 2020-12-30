@@ -234,6 +234,7 @@
                 app:pressedTextColor="#00FF00" />
 
             <LinearLayout
+                android:id="@+id/searchbar_layout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -251,12 +252,12 @@
                     android:layout_marginRight="15dp"
                     android:layout_marginBottom="10dp"
                     android:hint="请输入要搜索的内容..."
+                    android:inputType="number"
                     android:paddingLeft="12dp"
                     android:text="android"
                     android:textColor="#333333"
                     android:textColorHint="#999999"
                     android:textSize="14sp"
-                    android:inputType="number"
                     app:backgroundColor="#F1F1F1"
                     app:borderColor="#D5D5D5"
                     app:borderWidth="1dp"
@@ -319,6 +320,42 @@
                     app:isShowActionButton="true"
                     app:isShowBorder="true" />
             </LinearLayout>
+
+            <com.benshanyang.widgetlibrary.widget.EditableTextView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:digits="^[a-z0-9]+$"
+                android:maxLength="500"
+                android:singleLine="false"
+                android:layout_marginBottom="50dp"
+                app:bottomBorderColor="@android:color/holo_blue_dark"
+                app:bottomBorderWidth="3dp"
+                app:contentText="asdfsdjkhgjhwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+                app:editable="true"
+                app:gravity="right"
+                app:inputIcon="@drawable/ic_update"
+                app:inputIconColor="#FF0000"
+                app:inputIconPadding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchbar_layout"
+                app:requiredIcon="@drawable/ic_required"
+                app:requiredPadding="2dp"
+                app:requiredText="(必填)"
+                app:requiredTextGravity="bottom"
+                app:requiredTextSize="10sp"
+                app:title="联系方式"
+                app:titleContentSpace="10dp"
+                app:titleGravity="top"
+                app:titleTextBold="0.8"
+                app:titleTextColor="#ff0000"
+                app:titleTextSize="14sp"
+                app:topBorderColor="@android:color/holo_red_dark"
+                app:topBorderWidth="1dp" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </com.benshanyang.widgetlibrary.widget.ImmersiveLinearLayout>

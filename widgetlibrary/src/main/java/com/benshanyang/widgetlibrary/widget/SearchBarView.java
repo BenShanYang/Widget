@@ -7,7 +7,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.text.Editable;
 import android.text.InputFilter;

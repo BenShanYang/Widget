@@ -490,4 +490,92 @@
         <!--边框的宽度-->
         <attr name="borderWidth" />
     </declare-styleable>
+
+    <!--可编辑的输入框-->
+    <declare-styleable name="EditableTextView">
+        <!--输入框图标-->
+        <attr name="inputIcon" format="reference" />
+        <!--输入框图标颜色-->
+        <attr name="inputIconColor" format="color" />
+        <!--标题和输入框图标的间距-->
+        <attr name="inputIconPadding" format="dimension" />
+        <!--输入框标题-->
+        <attr name="title" />
+        <!--输入框标题文字颜色-->
+        <attr name="titleTextColor" />
+        <!--标题文字的粗细值 一般设置为0.8，取值范围0~1.0-->
+        <attr name="titleTextBold" format="float" />
+        <!--输入框标题文字字号-->
+        <attr name="titleTextSize" />
+        <!--必填的星号-->
+        <attr name="requiredIcon" format="reference" />
+        <!--标题和必填文字或星号的距离-->
+        <attr name="requiredPadding" format="dimension" />
+        <!--必填文字-->
+        <attr name="requiredText" format="string" />
+        <!--必填文字的文字颜色-->
+        <attr name="requiredTextColor" format="color" />
+        <!--必填文字的文字字号-->
+        <attr name="requiredTextSize" format="dimension" />
+        <!--必填文字和标题文字的对齐方式-->
+        <attr name="requiredTextGravity">
+            <!--和标题文字上对齐-->
+            <enum name="top" value="0" />
+            <!--和标题文字下对齐-->
+            <enum name="bottom" value="1" />
+            <!--和标题文字居中对齐-->
+            <enum name="center" value="2" />
+        </attr>
+        <!--输入框内容-->
+        <attr name="contentText" />
+        <!--输入框占位文字-->
+        <attr name="android:hint" />
+        <!--输入框内容文字颜色-->
+        <attr name="contentTextColor" />
+        <!--输入框内容文字字号-->
+        <attr name="contentTextSize" />
+        <!--输入框占位文字颜色-->
+        <attr name="android:textColorHint" />
+        <!--输入框的输入类型-->
+        <attr name="android:inputType" />
+        <!--输入框最多的输入字数-->
+        <attr name="android:maxLength" />
+        <!--输入文字的过滤条件-->
+        <attr name="android:digits" />
+        <!--输入框设置只能是单行-->
+        <attr name="android:singleLine" />
+        <!--输入框是否可以编辑-->
+        <attr name="editable" format="boolean" />
+        <!--输入文字的位置-->
+        <attr name="gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="center" value="2" />
+        </attr>
+        <!--标题和输入内容的对齐方式-->
+        <attr name="titleGravity" format="enum">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="center" value="2" />
+        </attr>
+        <!--标题和输入内容的间距-->
+        <attr name="titleContentSpace" />
+
+        <!--上边框颜色-->
+        <attr name="topBorderColor" format="color" />
+        <!--下边框颜色-->
+        <attr name="bottomBorderColor" format="color" />
+        <!--上边框宽度-->
+        <attr name="topBorderWidth" />
+        <!--下边框宽度-->
+        <attr name="bottomBorderWidth" />
+        <!--上边框距离左侧的距离-->
+        <attr name="topBorderLeftMargin" format="dimension" />
+        <!--上边框距离右侧的距离-->
+        <attr name="topBorderRightMargin" format="dimension" />
+        <!--下边框距离左侧的距离-->
+        <attr name="bottomBorderLeftMargin" format="dimension" />
+        <!--下边框距离右侧的距离-->
+        <attr name="bottomBorderRightMargin" format="dimension" />
+    </declare-styleable>
 </resources>
