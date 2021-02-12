@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        app:textThickness="bold_9"
+        app:textThickness="bold_8"
         app:actionButtonVisibility="visible"
         app:borderColor="#D5D5D5"
         app:borderWidth="1dp"

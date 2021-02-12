@@ -113,6 +113,7 @@ public class TitleBarView extends FrameLayout {
             int finishActivityVisibility = typedArray.getInt(R.styleable.TitleBarView_finishActivityVisibility, -1);//是否显示标题栏返回按钮
             int actionButtonVisibility = typedArray.getInt(R.styleable.TitleBarView_actionButtonVisibility, -1);//是否显示标题栏右侧功能按钮
             float thickness = typedArray.getInt(R.styleable.TitleBarView_textThickness, -1);//标题的粗体系数
+
             if (thickness != -1) {
                 boldThickness = thickness / 10.0f;
             }
