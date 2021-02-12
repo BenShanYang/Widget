@@ -1,6 +1,6 @@
 # Widget
 
-[![](https://jitpack.io/v/BenShanYang/Widget.svg)](https://jitpack.io/#BenShanYang/Widget)
+[![](https://www.jitpack.io/v/BenShanYang/Widget.svg)](https://www.jitpack.io/#BenShanYang/Widget)
 
 
 
@@ -12,6 +12,6 @@
 	}
   
 	dependencies {
-		implementation 'com.github.BenShanYang:Widget:1.0.0'
+		implementation 'com.github.BenShanYang:Widget:1.0.1'
 	}
 
