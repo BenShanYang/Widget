@@ -7,7 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.style.CharacterStyle;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,6 +58,7 @@ public class TitleBarView extends FrameLayout {
     private OnFinishListener onFinishListener;//点击返回按钮的回调接口
     private OnActionButtonClickListener onActionButtonClickListener;//右侧功能按钮点击事件的回调接口
 
+    private float boldThickness = -1;//文字的粗体系数
     private float borderWidth = 0;//底边宽度
     private int borderColor = 0xFFD5D5D5;//底边颜色
     private boolean immersionStatusBar = false;//是否是沉浸式状态栏
@@ -107,10 +112,23 @@ public class TitleBarView extends FrameLayout {
             immersionStatusBar = typedArray.getBoolean(R.styleable.TitleBarView_immersionStatusBar, false);//沉浸式状态栏
             int finishActivityVisibility = typedArray.getInt(R.styleable.TitleBarView_finishActivityVisibility, -1);//是否显示标题栏返回按钮
             int actionButtonVisibility = typedArray.getInt(R.styleable.TitleBarView_actionButtonVisibility, -1);//是否显示标题栏右侧功能按钮
+            float thickness = typedArray.getInt(R.styleable.TitleBarView_textThickness, -1);//标题的粗体系数
+            if (thickness != -1) {
+                boldThickness = thickness / 10.0f;
+            }
 
             if (tvTitle != null) {
                 //设置标题
-                tvTitle.setText(TextUtils.isEmpty(titleText) ? "" : titleText);
+                if (TextUtils.isEmpty(titleText)) {
+                    tvTitle.setText("");
+                } else {
+                    if (boldThickness < 0) {
+                        tvTitle.setText(titleText);
+                    } else {
+                        setText(tvTitle, titleText, boldThickness);
+                    }
+                }
+
                 //设置标题文字颜色
                 if (titleTextColor != null) {
                     tvTitle.setTextColor(titleTextColor);
@@ -337,7 +355,11 @@ public class TitleBarView extends FrameLayout {
      */
     public void setTitle(CharSequence title) {
         if (tvTitle != null && title != null) {
-            tvTitle.setText(title);
+            if (boldThickness < 0) {
+                tvTitle.setText(title);
+            } else {
+                setText(tvTitle, title, boldThickness);
+            }
         }
     }
 
@@ -618,6 +640,29 @@ public class TitleBarView extends FrameLayout {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    /**
+     * 设置字体粗细
+     *
+     * @param textView  显示文字的控件
+     * @param text      要显示的文字
+     * @param thickness 文字的粗细程度
+     */
+    private void setText(@NonNull TextView textView, CharSequence text, final float thickness) {
+        if (textView != null && text != null && text.length() > 0) {
+            final int color = textView.getCurrentTextColor();
+            SpannableStringBuilder spannableString = new SpannableStringBuilder(text);
+            spannableString.setSpan(new CharacterStyle() {
+                @Override
+                public void updateDrawState(TextPaint textPaint) {
+                    textPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+                    textPaint.setColor(color);//字体颜色
+                    textPaint.setStrokeWidth(thickness > 0 ? thickness : 0);//控制字体加粗的程度
+                }
+            }, 0, text.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+            textView.setText(spannableString);
+        }
     }
 
 }

@@ -412,18 +412,41 @@
         <!--是否支持沉浸式-->
         <attr name="immersionStatusBar" format="boolean" />
         <!--是否显示左侧返回按钮-->
-        <attr name="finishActivityVisibility">
+        <attr name="finishActivityVisibility" format="enum">
             <!-- Visible on screen; the default value. -->
             <enum name="visible" value="0" />
             <!-- Not displayed, but taken into account during layout (space is left for it). -->
             <enum name="invisible" value="1" />
         </attr>
         <!--是否显示右侧按钮-->
-        <attr name="actionButtonVisibility">
+        <attr name="actionButtonVisibility" format="enum">
             <!-- Visible on screen; the default value. -->
             <enum name="visible" value="0" />
             <!-- Not displayed, but taken into account during layout (space is left for it). -->
             <enum name="invisible" value="1" />
+        </attr>
+        <!--标题的粗体系数-->
+        <attr name="textThickness" format="enum">
+            <enum name="bold_1" value="1" />
+            <enum name="bold_2" value="2" />
+            <enum name="bold_3" value="3" />
+            <enum name="bold_4" value="4" />
+            <enum name="bold_5" value="5" />
+            <enum name="bold_6" value="6" />
+            <enum name="bold_7" value="7" />
+            <enum name="bold_8" value="8" />
+            <enum name="bold_9" value="9" />
+            <enum name="bold_10" value="10" />
+            <enum name="bold_11" value="11" />
+            <enum name="bold_12" value="12" />
+            <enum name="bold_13" value="13" />
+            <enum name="bold_14" value="14" />
+            <enum name="bold_15" value="15" />
+            <enum name="bold_16" value="16" />
+            <enum name="bold_17" value="17" />
+            <enum name="bold_18" value="18" />
+            <enum name="bold_19" value="19" />
+            <enum name="bold_20" value="20" />
         </attr>
     </declare-styleable>
 
