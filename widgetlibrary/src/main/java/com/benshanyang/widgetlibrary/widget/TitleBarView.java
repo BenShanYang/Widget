@@ -1,9 +1,9 @@
 package com.benshanyang.widgetlibrary.widget;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -15,7 +15,7 @@ import android.text.style.CharacterStyle;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -265,9 +265,25 @@ public class TitleBarView extends FrameLayout {
         borderView.setBackgroundColor(borderColor);//设置底边框的颜色
 
         if (immersionStatusBar && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setPadding(getPaddingLeft(), getPaddingTop() + getStatusBarHeight(getContext()), getPaddingRight(), getPaddingBottom());
-        } else {
-            setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), getPaddingBottom());
+            int height = getStatusBarHeight(getContext());
+            LayoutParams titleParams = (LayoutParams) titleLayout.getLayoutParams();
+            titleParams.topMargin = (height < 0 ? 0 : height);
+
+            if (height < 0) {
+                try{
+                    ((Activity) context).findViewById(android.R.id.content).setOnApplyWindowInsetsListener(new OnApplyWindowInsetsListener() {
+                        @Override
+                        public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
+                            int statusBarH = insets.getSystemWindowInsetTop();
+                            LayoutParams titleParams = (LayoutParams) titleLayout.getLayoutParams();
+                            titleParams.topMargin = (statusBarH < 0 ? 0 : statusBarH);
+                            return insets;
+                        }
+                    });
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
         }
 
         initListener();
@@ -587,9 +603,30 @@ public class TitleBarView extends FrameLayout {
     public void setImmersionStateBar(boolean flag) {
         immersionStatusBar = flag;
         if (immersionStatusBar && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setPadding(getPaddingLeft(), getPaddingTop() + getStatusBarHeight(getContext()), getPaddingRight(), getPaddingBottom());
-        } else {
-            setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), getPaddingBottom());
+
+            int height = getStatusBarHeight(getContext());
+            if (titleLayout != null) {
+                LayoutParams titleParams = (LayoutParams) titleLayout.getLayoutParams();
+                titleParams.topMargin = (height < 0 ? 0 : height);
+            }
+
+            if (height < 0) {
+                try{
+                    ((Activity) getContext()).findViewById(android.R.id.content).setOnApplyWindowInsetsListener(new OnApplyWindowInsetsListener() {
+                        @Override
+                        public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
+                            int statusBarH = insets.getSystemWindowInsetTop();
+                            if (titleLayout != null) {
+                                LayoutParams titleParams = (LayoutParams) titleLayout.getLayoutParams();
+                                titleParams.topMargin = (statusBarH < 0 ? 0 : statusBarH);
+                            }
+                            return insets;
+                        }
+                    });
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -622,25 +659,26 @@ public class TitleBarView extends FrameLayout {
      * @return
      */
     private int getStatusBarHeight(Context context) {
+        int statusBarH = 0;
         if (TextUtils.equals(Build.MANUFACTURER.toLowerCase(), "xiaomi")) {
             int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
             if (resourceId > 0) {
-                return context.getResources().getDimensionPixelSize(resourceId);
+                statusBarH = context.getResources().getDimensionPixelSize(resourceId);
             }
-            return 0;
-        }
-        try {
-            Class<?> c = Class.forName("com.android.internal.R$dimen");
-            Object obj = c.newInstance();
-            Field field = c.getField("status_bar_height");
-            int x = Integer.parseInt(field.get(obj).toString());
-            if (x > 0) {
-                return context.getResources().getDimensionPixelSize(x);
+        } else {
+            try {
+                Class<?> c = Class.forName("com.android.internal.R$dimen");
+                Object obj = c.newInstance();
+                Field field = c.getField("status_bar_height");
+                int x = Integer.parseInt(field.get(obj).toString());
+                if (x > 0) {
+                    statusBarH = context.getResources().getDimensionPixelSize(x);
+                }
+            } catch (Exception e) {
+                statusBarH = -1;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        return 0;
+        return statusBarH;
     }
 
     /**
