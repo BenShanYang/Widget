@@ -108,6 +108,7 @@ public class PasswordEditText extends FrameLayout {
         if (typedArray != null) {
             int actionButtonType = typedArray.getInt(R.styleable.PasswordEditText_actionButtonType, -1);//要显示那种类型的功能按钮
             int borderVisibility = typedArray.getInt(R.styleable.PasswordEditText_borderVisibility, 2);//是否显示底边默认不现实
+            int leftIconVisibility = typedArray.getInt(R.styleable.PasswordEditText_leftIconVisibility, 0);//左侧密码图标是否要显示 默认显示
 
             normalBorderColor = typedArray.getColor(R.styleable.PasswordEditText_normalBorderColor, 0xFFD5D5D5);//失去焦点时底边颜色
             focusedBorderColor = typedArray.getColor(R.styleable.PasswordEditText_focusedBorderColor, 0xFF0087f3);//获取焦点时底边颜色
@@ -189,6 +190,25 @@ public class PasswordEditText extends FrameLayout {
                 //左侧密码输入框的小图标颜色
                 if (iconColor != -1) {
                     ibIcon.setColorFilter(iconColor);
+                }
+
+                //左侧密码图标是否要显示 默认显示
+                switch (leftIconVisibility) {
+                    case 0:
+                        //显示 visible
+                        ibIcon.setVisibility(VISIBLE);
+                        break;
+                    case 1:
+                        //不显示但是占位 invisible
+                        ibIcon.setVisibility(INVISIBLE);
+                        break;
+                    case 2:
+                        //不显示 gone
+                        ibIcon.setVisibility(GONE);
+                        break;
+                    default:
+                        ibIcon.setVisibility(VISIBLE);
+                        break;
                 }
             }
 
@@ -499,6 +519,17 @@ public class PasswordEditText extends FrameLayout {
     }
 
     /**
+     * 左侧图标是否显示
+     *
+     * @param visibility visible-0-显示、invisible-1-占位不显示、gone-2-不占为不显示
+     */
+    public void setLeftIconVisibility(@Visibility int visibility) {
+        if (ibIcon != null) {
+            ibIcon.setVisibility(visibility);
+        }
+    }
+
+    /**
      * 设置密码输入框的文字和左侧图标的间距
      *
      * @param space 距离值
@@ -720,6 +751,9 @@ public class PasswordEditText extends FrameLayout {
             ibClear = (ImageButton) actionLayout.findViewById(R.id.ib_clearbtn);//清除内容按钮
             ibShowHidePwd = (ImageButton) actionLayout.findViewById(R.id.ib_pwdbtn);//是否显示密码按钮
             flRightBtn.addView(actionLayout);
+            if (flRightBtn.getVisibility() == View.VISIBLE) {
+                flRightBtn.setVisibility(GONE);
+            }
             setListener();
         }
     }

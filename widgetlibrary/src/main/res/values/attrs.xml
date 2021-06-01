@@ -110,6 +110,14 @@
             <enum name="invisible" value="1" />
             <enum name="gone" value="2" />
         </attr>
+
+        <!--左侧密码图标是否要显示-->
+        <attr name="leftIconVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+
         <!--右侧清除按钮和显示/隐藏按钮的排列顺序-->
         <attr name="actionButtonType" format="enum">
             <enum name="clear_password" value="0" />
