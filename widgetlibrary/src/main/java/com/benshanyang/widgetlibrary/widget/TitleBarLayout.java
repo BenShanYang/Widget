@@ -45,7 +45,7 @@ public class TitleBarLayout extends LinearLayout {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             view = findViewById(spaceId);
             if (view == null) {
-                view = new View(context);
+                view = new TextView(context);
                 view.setId(spaceId);
             }
             view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
