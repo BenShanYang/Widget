@@ -12,6 +12,6 @@
 	}
   
 	dependencies {
-		implementation 'com.github.BenShanYang:Widget:1.0.3'
+		implementation 'com.github.BenShanYang:Widget:1.0.5'
 	}
 
